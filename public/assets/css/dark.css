@@ -1,0 +1,208 @@
+/* Zoro Dark Mode
+   -------------
+   Applied when <html data-theme="dark"> is present
+   Keep it monochrome, minimal, and readable.
+*/
+
+html[data-theme="dark"]{
+  color-scheme: dark;
+
+  /* Core variables used by your layout (app.php) */
+  --bg:#0b0b0c;
+  --text:#f5f5f5;
+  --muted:#a1a1aa;
+  --border:#232326;
+  --card:#111114;
+
+  /* Optional extras (safe even if unused elsewhere) */
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-soft: 0 8px 24px rgba(0,0,0,0.25);
+  --ring: rgba(255,255,255,0.10);
+  --danger:#ff6b6b;
+  --success:#2dd4bf;
+}
+
+/* Base */
+html[data-theme="dark"] body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+html[data-theme="dark"] a{
+  color: inherit;
+}
+
+html[data-theme="dark"] ::selection{
+  background: rgba(255,255,255,0.18);
+}
+
+/* Borders + surfaces (generic) */
+html[data-theme="dark"] hr{
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .box{
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Layout specific */
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .topbar,
+html[data-theme="dark"] .bottomnav{
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+}
+
+/* Active states */
+html[data-theme="dark"] .side-item.active{
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+html[data-theme="dark"] .nav-item{
+  color: var(--muted) !important;
+}
+html[data-theme="dark"] .nav-item.active{
+  color: var(--text) !important;
+}
+html[data-theme="dark"] .nav-item .dot{
+  border-color: rgba(255,255,255,0.14) !important;
+}
+html[data-theme="dark"] .nav-item.active .dot{
+  background: var(--text) !important;
+  border-color: var(--text) !important;
+}
+
+/* Text helpers */
+html[data-theme="dark"] .muted,
+html[data-theme="dark"] .text-muted{
+  color: var(--muted) !important;
+}
+
+/* Buttons (generic) */
+html[data-theme="dark"] button,
+html[data-theme="dark"] .btn{
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  border-color: rgba(255,255,255,0.12);
+}
+
+html[data-theme="dark"] .btn:hover{
+  background: rgba(255,255,255,0.06);
+}
+
+html[data-theme="dark"] .btn:active{
+  background: rgba(255,255,255,0.08);
+}
+
+html[data-theme="dark"] .btn-primary,
+html[data-theme="dark"] .btn-black{
+  background: var(--text) !important;
+  color: var(--bg) !important;
+  border-color: var(--text) !important;
+}
+
+html[data-theme="dark"] .btn-primary:hover,
+html[data-theme="dark"] .btn-black:hover{
+  filter: brightness(0.95);
+}
+
+html[data-theme="dark"] .btn-danger,
+html[data-theme="dark"] .danger{
+  border-color: rgba(255,107,107,0.35);
+  color: var(--danger);
+}
+
+/* Inputs / selects / textarea */
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea{
+  background: rgba(255,255,255,0.03) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  outline: none;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder{
+  color: rgba(161,161,170,0.75) !important; /* muted */
+}
+
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] textarea:focus{
+  border-color: rgba(255,255,255,0.22) !important;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08) !important;
+}
+
+/* Tables */
+html[data-theme="dark"] table{
+  color: var(--text);
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] th,
+html[data-theme="dark"] td{
+  border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] thead th{
+  background: rgba(255,255,255,0.04) !important;
+}
+
+html[data-theme="dark"] tbody tr:hover{
+  background: rgba(255,255,255,0.03) !important;
+}
+
+/* Badges / pills */
+html[data-theme="dark"] .pill,
+html[data-theme="dark"] .badge{
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: var(--text) !important;
+}
+
+/* Modals / dropdowns (generic) */
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .dropdown,
+html[data-theme="dark"] .menu{
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* Flash messages (generic classes) */
+html[data-theme="dark"] .flash,
+html[data-theme="dark"] .alert{
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+}
+
+html[data-theme="dark"] .alert-success{
+  border-color: rgba(45,212,191,0.35);
+}
+
+html[data-theme="dark"] .alert-danger,
+html[data-theme="dark"] .alert-error{
+  border-color: rgba(255,107,107,0.35);
+}
+
+/* Links that look like buttons in some pages */
+html[data-theme="dark"] a.btn,
+html[data-theme="dark"] a.pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reduce overly bright images/icons if any */
+html[data-theme="dark"] img,
+html[data-theme="dark"] svg{
+  /* keep default; do not force filter globally */
+}
